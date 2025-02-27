@@ -1,4 +1,4 @@
-import html2canvas from "html2canvas";
+// import html2canvas from "html2canvas";
 
 const reconfigureForPieCharts = (data) => {
   const d = data[0].data;
@@ -59,20 +59,20 @@ const getImagesFromWebViewer = function () {
   chart.dataURI().then(sendImages);
 };
 
-const saveImage = (callback) => {
-  html2canvas(document.querySelector("#chart")).then((canvas) => {
-    const img = canvas.toDataURL("image/png");
-    console.log(img);
+// const saveImage = (callback) => {
+//   html2canvas(document.querySelector("#chart")).then((canvas) => {
+//     const img = canvas.toDataURL("image/png");
+//     console.log(img);
 
-    FileMaker.PerformScriptWithOption(callback, JSON.stringify(img), 5);
-  });
-};
+//     FileMaker.PerformScriptWithOption(callback, JSON.stringify(img), 5);
+//   });
+// };
 
 export {
   reconfigureForPieCharts,
   handleClick,
   setChartSpecificOptions,
-  saveImage,
+  // saveImage,
   events,
   getImagesFromWebViewer,
 };
